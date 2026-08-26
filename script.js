@@ -19,11 +19,13 @@ const desktop =
 let progress = 0;
 
 const bootMessages = [
-    "Loading personal files...",
-    "Opening favorites...",
-    "Starting music player...",
-    "Checking games...",
-    "Loading SNEHA.EXE..."
+
+    "Loading questionable decisions...",
+
+    "Recovering unfinished thoughts...",
+
+    "Booting chaos.exe...",
+
 ];
 
 
@@ -396,38 +398,6 @@ function closePhotoViewer() {
 
 }
 
-
-/* =================================
-   MUSIC BUTTON
-================================= */
-
-const playButton =
-    document.getElementById(
-        "play-button"
-    );
-
-let playing = false;
-
-
-if (playButton) {
-
-    playButton.addEventListener(
-        "click",
-        () => {
-
-            playing = !playing;
-
-            playButton.textContent =
-                playing
-                    ? "Ⅱ"
-                    : "▶";
-
-        }
-    );
-
-}
-
-
 /* =================================
    GUESTBOOK
 ================================= */
@@ -507,21 +477,6 @@ async function sendMessage() {
     }
 
 }
-
-
-/* =================================
-   TRASH
-================================= */
-
-function trashMessage() {
-
-    alert(
-        "Trash is empty.\n\n" +
-        "You haven't deleted anything yet ♡"
-    );
-
-}
-
 
 /* =================================
    CLOSE PHOTO VIEWER
