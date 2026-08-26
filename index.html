@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SNEHA.EXE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================
+         BOOT SCREEN
+    =========================== -->
+
+    <div id="boot-screen">
+
+        <div class="boot-box">
+
+            <h1>SNEHA.EXE</h1>
+
+            <p>Starting personal computer...</p>
+
+            <div class="boot-bar">
+                <div id="boot-progress"></div>
+            </div>
+
+            <p id="boot-status">
+                Loading...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         DESKTOP
+    =========================== -->
+
+    <main id="desktop">
+
+
+        <!-- DESKTOP ICONS -->
+
+        <div class="desktop-icons">
+
+            <button class="desktop-icon"
+                onclick="openWindow('about-window')">
+
+                <span class="icon">☻</span>
+                <span>About Me</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="openWindow('things-window')">
+
+                <span class="icon">📁</span>
+                <span>Things I Like</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="openWindow('photos-window')">
+
+                <span class="icon">📷</span>
+                <span>My Photos</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="openWindow('games-window')">
+
+                <span class="icon">🎮</span>
+                <span>Games</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="openWindow('projects-window')">
+
+                <span class="icon">▣</span>
+                <span>Projects</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="openWindow('music-window')">
+
+                <span class="icon">♫</span>
+                <span>Music</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="openWindow('random-window')">
+
+                <span class="icon">✦</span>
+                <span>Random.txt</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="openWindow('guestbook-window')">
+
+                <span class="icon">✉</span>
+                <span>Guestbook</span>
+
+            </button>
+
+
+            <button class="desktop-icon"
+                onclick="trashMessage()">
+
+                <span class="icon">🗑</span>
+                <span>Trash</span>
+
+            </button>
+
+        </div>
+
+
+        <!-- ==========================
+             ABOUT
+        =========================== -->
+
+        <section class="window"
+            id="about-window"
+            style="top: 12%; left: 27%;">
+
+            <div class="window-header">
+
+                <span>☻ ABOUT ME</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('about-window')">−</button>
+                    <button onclick="maximizeWindow('about-window')">□</button>
+                    <button onclick="closeWindow('about-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content about-content">
+
+                <div class="profile-picture">
+                    <span>♡</span>
+                </div>
+
+
+                <div>
+
+                    <h2>hi, i'm sneha.</h2>
+
+                    <p>
+                        welcome to my little corner
+                        of the internet.
+                    </p>
+
+                    <p>
+                       i like playing with AI.<br>
+
+                      click around.
+                    </p>
+
+
+                    <div class="profile-info">
+
+                        <div>
+                            <span>STATUS</span>
+                            <strong>online ♡</strong>
+                        </div>
+
+                        <div>
+                            <span>STUDYING</span>
+                            <strong>BCA</strong>
+                        </div>
+
+                        <div>
+                            <span>DOING</span>
+                            <strong>prob assignments T.T</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             THINGS I LIKE
+        =========================== -->
+
+        <section class="window"
+            id="things-window"
+            style="top: 10%; left: 36%;">
+
+            <div class="window-header">
+
+                <span>📁 THINGS I LIKE</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('things-window')">−</button>
+                    <button onclick="maximizeWindow('things-window')">□</button>
+                    <button onclick="closeWindow('things-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content">
+
+                <p class="folder-path">
+                    C:\Users\Sneha\Favorites
+                </p>
+
+
+                <div class="folder-grid">
+
+                    <div class="folder">
+                        <span>♫</span>
+                        <p>Music</p>
+                    </div>
+
+                    <div class="folder">
+                        <span>⊹</span>
+                        <p>Games</p>
+                    </div>
+
+                    <div class="folder">
+                       <span>𐙚</span>
+                        <p>My Girlies</p>
+                    </div>
+
+                    <div class="folder">
+                        <span>♡</span>
+                        <p>Anime</p>
+                    </div>
+
+                    <div class="folder">
+                        <span>☾</span>
+                        <p>Random</p>
+                    </div>
+
+                    <div class="folder">
+                        <span>✦</span>
+                        <p>Pretty Things</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             PHOTOS
+        =========================== -->
+
+        <section class="window"
+            id="photos-window"
+            style="top: 14%; left: 18%;">
+
+            <div class="window-header">
+
+                <span>📷 MY PHOTOS</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('photos-window')">−</button>
+                    <button onclick="maximizeWindow('photos-window')">□</button>
+                    <button onclick="closeWindow('photos-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content">
+
+                <p class="folder-path">
+                    C:\Users\Sneha\Pictures
+                </p>
+
+
+                <div class="photo-grid">
+
+                    <div class="photo"
+                        onclick="openPhoto('images/photo1.jpg','photo1.jpg')">
+
+                        <img src="images/photo1.jpg"
+                            alt="Photo 1">
+
+                        <small>photo1.jpg</small>
+
+                    </div>
+
+
+                    <div class="photo"
+                        onclick="openPhoto('images/photo2.jpg','photo2.jpg')">
+
+                        <img src="images/photo2.jpg"
+                            alt="Photo 2">
+
+                        <small>photo2.jpg</small>
+
+                    </div>
+
+
+                    <div class="photo"
+                        onclick="openPhoto('images/photo3.jpg','photo3.jpg')">
+
+                        <img src="images/photo3.jpg"
+                            alt="Photo 3">
+
+                        <small>photo3.jpg</small>
+
+                    </div>
+
+
+                    <div class="photo"
+                        onclick="openPhoto('images/photo4.jpg','photo4.jpg')">
+
+                        <img src="images/photo4.jpg"
+                            alt="Photo 4">
+
+                        <small>photo4.jpg</small>
+
+                    </div>
+
+                </div>
+
+
+                <p class="photo-note">
+                    click a photo to open it ✦
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             GAMES / MLBB
+        =========================== -->
+
+        <section class="window"
+            id="games-window"
+            style="top: 18%; left: 43%;">
+
+            <div class="window-header">
+
+                <span>🎮 GAMES.EXE</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('games-window')">−</button>
+                    <button onclick="maximizeWindow('games-window')">□</button>
+                    <button onclick="closeWindow('games-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content">
+
+                <div class="game-card">
+
+                    <div class="game-icon">
+    <img src="images/mlbb.jpg" alt="Mobile Legends">
+</div>
+
+
+                    <div>
+
+                        <p class="game-label">
+                            CURRENT GAME
+                        </p>
+
+                        <h2>
+                            Mobile Legends:<br>
+                            Bang Bang
+                        </h2>
+
+
+                        <div class="lanes">
+
+                            <span>MID</span>
+                            <span>GOLD</span>
+                            <span>ROAM</span>
+
+                        </div>
+
+
+                        <p class="game-status">
+                            currently playing ♡
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             PROJECTS
+        =========================== -->
+
+        <section class="window"
+            id="projects-window"
+            style="top: 23%; left: 28%;">
+
+            <div class="window-header">
+
+                <span>▣ PROJECTS</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('projects-window')">−</button>
+                    <button onclick="maximizeWindow('projects-window')">□</button>
+                    <button onclick="closeWindow('projects-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content">
+
+                <p class="folder-path">
+                    C:\Users\Sneha\Projects
+                </p>
+
+
+                <div class="project-file">
+
+                    <span>▣</span>
+
+                    <div>
+                        <strong>ShikshyaVerse</strong>
+                        <small>
+                            Student Management System
+                        </small>
+                    </div>
+
+                    <b>PHP</b>
+
+                </div>
+
+
+                <div class="project-file">
+
+                    <span>▣</span>
+
+                    <div>
+                        <strong>Photobooth</strong>
+                        <small>
+                            Browser photo experience
+                        </small>
+                    </div>
+
+                    <b>JS</b>
+
+                </div>
+
+
+                <div class="project-file">
+
+                    <span>▣</span>
+
+                    <div>
+                        <strong>More Soon</strong>
+                        <small>
+                            something is loading...
+                        </small>
+                    </div>
+
+                    <b>???</b>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             MUSIC
+        =========================== -->
+
+        <section class="window"
+            id="music-window"
+            style="top: 29%; left: 48%;">
+
+            <div class="window-header">
+
+                <span>♫ MUSIC PLAYER</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('music-window')">−</button>
+                    <button onclick="maximizeWindow('music-window')">□</button>
+                    <button onclick="closeWindow('music-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content music-content">
+
+                <div class="album-art">
+                    ♫
+                </div>
+
+                <p class="now-playing">
+                    NOW PLAYING
+                </p>
+
+                <h2>
+                    your favorite song
+                </h2>
+
+                <p class="artist">
+                    artist name
+                </p>
+
+                <div class="music-line"></div>
+
+                <div class="music-controls">
+
+                    <button>◀</button>
+
+                    <button id="play-button">
+                        ▶
+                    </button>
+
+                    <button>▶</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             RANDOM
+        =========================== -->
+
+        <section class="window"
+            id="random-window"
+            style="top: 35%; left: 12%;">
+
+            <div class="window-header">
+
+                <span>✦ RANDOM.TXT</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('random-window')">−</button>
+                    <button onclick="maximizeWindow('random-window')">□</button>
+                    <button onclick="closeWindow('random-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content random-content">
+
+                <p>
+                    things that don't need
+                    their own folder:
+                </p>
+
+                <ul>
+
+                    <li>♡ cute things</li>
+                    <li>♫ songs on repeat</li>
+                    <li>✦ making websites</li>
+                    <li>୨୧ pretty interfaces</li>
+                    <li>☻ unnecessary screenshots</li>
+
+                </ul>
+
+
+                <p class="blink-text">
+                    more randomness pending...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             GUESTBOOK
+        =========================== -->
+
+        <section class="window"
+            id="guestbook-window"
+            style="top: 39%; left: 40%;">
+
+            <div class="window-header">
+
+                <span>✉ GUESTBOOK</span>
+
+                <div class="window-buttons">
+
+                    <button onclick="minimizeWindow('guestbook-window')">−</button>
+                    <button onclick="maximizeWindow('guestbook-window')">□</button>
+                    <button onclick="closeWindow('guestbook-window')">×</button>
+
+                </div>
+
+            </div>
+
+
+            <div class="window-content guestbook">
+
+                <h2>
+                    leave a message ♡
+                </h2>
+
+
+                <input
+                    type="text"
+                    id="guest-name"
+                    placeholder="your name">
+
+
+                <textarea
+                    id="guest-message"
+                    placeholder="say something..."></textarea>
+
+
+                <button
+                    class="send-button"
+                    onclick="sendMessage()">
+
+                    SIGN GUESTBOOK
+
+                </button>
+
+
+                <p id="guest-response"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             TASKBAR
+        =========================== -->
+
+        <footer class="taskbar">
+
+            <button
+                class="start-button"
+                onclick="toggleStartMenu()">
+
+                ♡ START
+
+            </button>
+
+
+            <div class="taskbar-title">
+                SNEHA.EXE
+            </div>
+
+
+            <div
+                class="clock"
+                id="clock">
+
+                00:00
+
+            </div>
+
+        </footer>
+
+
+        <!-- START MENU -->
+
+        <div id="start-menu">
+
+            <div class="start-header">
+                SNEHA.EXE ♡
+            </div>
+
+            <button onclick="openWindow('about-window')">
+                ☻ About
+            </button>
+
+            <button onclick="openWindow('things-window')">
+                📁 Things I Like
+            </button>
+
+            <button onclick="openWindow('photos-window')">
+                📷 Photos
+            </button>
+
+            <button onclick="openWindow('games-window')">
+                🎮 Games
+            </button>
+
+            <button onclick="openWindow('projects-window')">
+                ▣ Projects
+            </button>
+
+            <button onclick="openWindow('music-window')">
+                ♫ Music
+            </button>
+
+            <button onclick="openWindow('random-window')">
+                ✦ Random
+            </button>
+
+        </div>
+
+
+        <!-- PHOTO VIEWER -->
+
+        <div id="photo-viewer">
+
+            <div class="viewer-box">
+
+                <button
+                    class="viewer-close"
+                    onclick="closePhotoViewer()">
+
+                    ×
+
+                </button>
+
+
+                <img
+                    id="viewer-image"
+                    src=""
+                    alt="Selected photo">
+
+
+                <p id="viewer-name">
+                    photo.jpg
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,1141 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #e8b8d0;
+    --pink-dark: #b982a0;
+    --lavender: #cfc2e5;
+    --cream: #fffafc;
+    --purple: #5b4c60;
+    --border: #756577;
+    --dark: #29232b;
+}
+
+
+/* ==========================
+   BODY
+========================== */
+
+body {
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* ==========================
+   BOOT
+========================== */
+
+#boot-screen {
+    position: fixed;
+
+    inset: 0;
+
+    background: #18141b;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+}
+
+.boot-box {
+    width: 420px;
+
+    max-width: 85%;
+
+    font-family: monospace;
+}
+
+.boot-box h1 {
+    color: var(--pink);
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+}
+
+.boot-box p {
+    font-size: 12px;
+
+    margin: 8px 0;
+}
+
+.boot-bar {
+    height: 15px;
+
+    border: 1px solid #777;
+
+    margin-top: 20px;
+}
+
+#boot-progress {
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--pink);
+}
+
+
+/* ==========================
+   DESKTOP
+========================== */
+
+#desktop {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #b8a5c9,
+            #e0c3d2,
+            #bbb0d7
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+
+    overflow: hidden;
+}
+
+#desktop.visible {
+    opacity: 1;
+}
+
+#desktop::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,0.3) 1px,
+            transparent 1px
+        );
+
+    background-size: 18px 18px;
+
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+
+/* ==========================
+   DESKTOP ICONS
+========================== */
+
+.desktop-icons {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    z-index: 2;
+}
+
+.desktop-icon {
+    width: 90px;
+
+    padding: 5px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    text-shadow:
+        1px 1px 2px #514658;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.desktop-icon:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    filter:
+        drop-shadow(
+            1px 2px 1px
+            rgba(0,0,0,0.3)
+        );
+}
+
+
+/* ==========================
+   WINDOWS
+========================== */
+
+.window {
+    position: absolute;
+
+    width: 500px;
+
+    max-width: 80vw;
+
+    background: var(--cream);
+
+    border: 2px solid var(--border);
+
+    box-shadow:
+        8px 8px 0
+        rgba(60,45,65,0.28);
+
+    z-index: 10;
+}
+
+.window-header {
+    height: 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d1a9be,
+            #d8c8e5
+        );
+
+    color: #302832;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6px 0 10px;
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: move;
+
+    border-bottom: 2px solid var(--border);
+}
+
+.window-buttons {
+    display: flex;
+
+    gap: 3px;
+}
+
+.window-buttons button {
+    width: 23px;
+    height: 21px;
+
+    background: #f2e9ef;
+
+    border: 1px solid var(--border);
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.window-buttons button:hover {
+    background: white;
+}
+
+.window-content {
+    padding: 25px;
+
+    color: #443b43;
+
+    max-height: 65vh;
+
+    overflow: auto;
+}
+
+
+/* ==========================
+   ABOUT
+========================== */
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 25px;
+}
+
+.profile-picture {
+    width: 110px;
+    height: 130px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7bfd3,
+            #cfc1e5
+        );
+
+    border: 2px solid #8b7787;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+
+    color: white;
+}
+
+.about-content h2 {
+    font-size: 27px;
+
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 13px;
+}
+
+.profile-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.profile-info div {
+    display: flex;
+
+    justify-content: space-between;
+
+    border-bottom: 1px dotted #aaa;
+
+    padding-bottom: 6px;
+}
+
+.profile-info span {
+    font-family: monospace;
+
+    font-size: 9px;
+
+    color: #887382;
+}
+
+.profile-info strong {
+    font-size: 11px;
+
+    font-weight: normal;
+}
+
+
+/* ==========================
+   FOLDERS
+========================== */
+
+.folder-path {
+    background: #eee5eb;
+
+    border: 1px solid #c4b3bf;
+
+    padding: 8px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    margin-bottom: 18px;
+}
+
+.folder-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.folder {
+    min-height: 105px;
+
+    background: #fffafd;
+
+    border: 1px solid #c5b4c0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.folder:hover {
+    background: #f7e3ed;
+
+    transform: translateY(-3px);
+}
+
+.folder span {
+    font-size: 30px;
+}
+
+.folder p {
+    font-family: monospace;
+
+    font-size: 10px;
+}
+
+
+/* ==========================
+   PHOTOS
+========================== */
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.photo {
+    cursor: pointer;
+
+    text-align: center;
+}
+
+.photo img {
+    width: 100%;
+    height: 105px;
+
+    object-fit: cover;
+
+    border: 2px solid #9c8493;
+
+    display: block;
+
+    transition: 0.2s;
+}
+
+.photo img:hover {
+    transform: scale(1.04);
+}
+
+.photo small {
+    display: block;
+
+    margin-top: 6px;
+
+    font-family: monospace;
+
+    font-size: 8px;
+}
+
+.photo-note {
+    margin-top: 15px;
+
+    color: #887481;
+
+    font-family: monospace;
+
+    font-size: 9px;
+}
+
+
+/* ==========================
+   GAME
+========================== */
+
+.game-card {
+    padding: 22px;
+
+    display: flex;
+
+    gap: 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #29232f,
+            #57445e
+        );
+
+    border: 2px solid #806d85;
+
+    box-shadow:
+        inset 0 0 0 1px #a995ad;
+}
+
+.game-icon {
+    width: 85px;
+    height: 85px;
+
+    border: 2px solid white;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.game-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.game-label {
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #dec3d4;
+}
+
+.game-card h2 {
+    font-size: 21px;
+
+    margin: 7px 0 15px;
+}
+
+.lanes {
+    display: flex;
+
+    gap: 7px;
+}
+
+.lanes span {
+    background: var(--pink);
+
+    color: #352936;
+
+    padding: 6px 10px;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+.game-status {
+    margin-top: 17px;
+
+    color: #d4c4d8;
+
+    font-size: 10px;
+}
+
+
+/* ==========================
+   PROJECTS
+========================== */
+
+.project-file {
+    display: grid;
+
+    grid-template-columns:
+        35px 1fr 55px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    border-bottom: 1px solid #ddd0d8;
+}
+
+.project-file > span {
+    font-size: 25px;
+}
+
+.project-file strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+.project-file small {
+    display: block;
+
+    color: #83727e;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+}
+
+.project-file b {
+    font-family: monospace;
+
+    font-size: 9px;
+
+    color: #8d7183;
+}
+
+
+/* ==========================
+   MUSIC
+========================== */
+
+.music-content {
+    text-align: center;
+}
+
+.album-art {
+    width: 130px;
+    height: 130px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6bfd2,
+            #c8bee3
+        );
+
+    border: 2px solid #917c8c;
+
+    font-size: 50px;
+
+    color: white;
+}
+
+.now-playing {
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #967d8d;
+}
+
+.music-content h2 {
+    margin-top: 8px;
+
+    font-size: 20px;
+}
+
+.artist {
+    color: #897682;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+}
+
+.music-line {
+    height: 3px;
+
+    background: #d7c3cf;
+
+    margin: 25px 0;
+}
+
+.music-controls {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.music-controls button {
+    border: 1px solid #9b8492;
+
+    background: #f4e8ef;
+
+    width: 35px;
+    height: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================
+   RANDOM
+========================== */
+
+.random-content {
+    font-family: monospace;
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+.random-content ul {
+    margin: 20px 0;
+
+    list-style: none;
+}
+
+.random-content li {
+    padding: 3px 0;
+}
+
+.blink-text {
+    color: #a08091;
+
+    animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0.3;
+    }
+
+}
+
+
+/* ==========================
+   GUESTBOOK
+========================== */
+
+.guestbook h2 {
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+.guestbook input,
+.guestbook textarea {
+    width: 100%;
+
+    border: 1px solid #b7a4b0;
+
+    background: white;
+
+    padding: 10px;
+
+    font-family: monospace;
+
+    margin-bottom: 10px;
+
+    outline: none;
+}
+
+.guestbook textarea {
+    height: 90px;
+
+    resize: none;
+}
+
+.guestbook input:focus,
+.guestbook textarea:focus {
+    border-color: var(--pink-dark);
+}
+
+.send-button {
+    border: 1px solid var(--border);
+
+    background: #e5c1d3;
+
+    padding: 10px 15px;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background: #d9aec5;
+}
+
+#guest-response {
+    margin-top: 15px;
+
+    font-size: 11px;
+
+    color: #8b7081;
+}
+
+
+/* ==========================
+   TASKBAR
+========================== */
+
+.taskbar {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 42px;
+
+    background:
+        linear-gradient(
+            #f5e9f0,
+            #d4c2d0
+        );
+
+    border-top: 2px solid #756577;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 4px;
+
+    z-index: 1000;
+
+    color: #392e38;
+
+    font-family: monospace;
+}
+
+.start-button {
+    height: 32px;
+
+    padding: 0 16px;
+
+    border: 2px outset #ddd;
+
+    background: #ead6e1;
+
+    font-family: monospace;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.start-button:active {
+    border-style: inset;
+}
+
+.taskbar-title {
+    flex: 1;
+
+    background: #e2d2dd;
+
+    border: 1px inset #aaa;
+
+    padding: 7px;
+
+    font-size: 10px;
+}
+
+.clock {
+    padding: 7px 12px;
+
+    font-size: 10px;
+
+    border: 1px inset #aaa;
+}
+
+
+/* ==========================
+   START MENU
+========================== */
+
+#start-menu {
+    position: absolute;
+
+    bottom: 42px;
+    left: 4px;
+
+    width: 220px;
+
+    background: #f7edf3;
+
+    border: 2px solid var(--border);
+
+    box-shadow:
+        6px 6px 0 rgba(50,40,55,0.3);
+
+    z-index: 2000;
+
+    display: none;
+}
+
+#start-menu.open {
+    display: block;
+}
+
+.start-header {
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #cba7bc,
+            #cfc1df
+        );
+
+    font-family: monospace;
+
+    font-weight: bold;
+}
+
+#start-menu button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    font-family: monospace;
+
+    cursor: pointer;
+}
+
+#start-menu button:hover {
+    background: #e6cddd;
+}
+
+
+/* ==========================
+   PHOTO VIEWER
+========================== */
+
+#photo-viewer {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(20,15,25,0.75);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+#photo-viewer.open {
+    display: flex;
+}
+
+.viewer-box {
+    position: relative;
+
+    background: #f8f0f4;
+
+    border: 2px solid var(--border);
+
+    padding: 25px;
+
+    box-shadow:
+        8px 8px 0 rgba(0,0,0,0.35);
+
+    max-width: 80vw;
+    max-height: 85vh;
+
+    text-align: center;
+}
+
+#viewer-image {
+    max-width: 70vw;
+    max-height: 70vh;
+
+    object-fit: contain;
+
+    border: 2px solid #887583;
+}
+
+#viewer-name {
+    margin-top: 10px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+}
+
+.viewer-close {
+    position: absolute;
+
+    right: 5px;
+    top: 5px;
+
+    width: 25px;
+    height: 23px;
+
+    border: 1px solid var(--border);
+
+    background: #eee2e9;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow: auto;
+    }
+
+    #desktop {
+        min-height: 100vh;
+
+        height: auto;
+
+        overflow: auto;
+    }
+
+    .desktop-icons {
+        position: relative;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 90px);
+
+        gap: 15px;
+
+        padding: 20px;
+
+        top: auto;
+        left: auto;
+    }
+
+    .window {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: calc(100% - 30px);
+
+        max-width: none;
+
+        margin: 25px 15px;
+    }
+
+    .window-content {
+        max-height: none;
+    }
+
+    .taskbar {
+        position: sticky;
+
+        bottom: 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .folder-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .photo-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .game-card {
+        flex-direction: column;
+    }
+
+    .project-file {
+        grid-template-columns:
+            35px 1fr;
+    }
+
+    .project-file b {
+        display: none;
+    }
+
+}
+
