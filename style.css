@@ -151,48 +151,43 @@ body {
 
 .desktop-icons {
     position: absolute;
-
     top: 25px;
     left: 25px;
 
     display: flex;
-
     flex-direction: column;
-
-    gap: 13px;
+    gap: 10px;
 
     z-index: 2;
 }
 
 .desktop-icon {
-    width: 90px;
-
-    padding: 5px;
+    width: 80px;
+    min-height: 70px;
+    padding: 6px 4px;
 
     border: none;
-
     background: transparent;
 
     color: white;
-
-    text-shadow:
-        1px 1px 2px #514658;
+    text-shadow: 1px 1px 2px #514658;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
+    justify-content: center;
 
-    gap: 5px;
+    gap: 4px;
 
     cursor: pointer;
-
     font-size: 12px;
+
+    box-sizing: border-box;
 }
 
 .desktop-icon:hover {
-    background: rgba(255,255,255,0.18);
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
 }
 
 .icon {
@@ -200,19 +195,17 @@ body {
     height: 45px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     font-size: 30px;
 
-    filter:
-        drop-shadow(
-            1px 2px 1px
-            rgba(0,0,0,0.3)
-        );
-}
+    flex-shrink: 0;
 
+    filter: drop-shadow(
+        1px 2px 1px rgba(0, 0, 0, 0.3)
+    );
+}
 
 /* ==========================
    WINDOWS
@@ -646,89 +639,6 @@ body {
 }
 
 
-/* ==========================
-   MUSIC
-========================== */
-
-.music-content {
-    text-align: center;
-}
-
-.album-art {
-    width: 130px;
-    height: 130px;
-
-    margin: 0 auto 20px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e6bfd2,
-            #c8bee3
-        );
-
-    border: 2px solid #917c8c;
-
-    font-size: 50px;
-
-    color: white;
-}
-
-.now-playing {
-    font-family: monospace;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    color: #967d8d;
-}
-
-.music-content h2 {
-    margin-top: 8px;
-
-    font-size: 20px;
-}
-
-.artist {
-    color: #897682;
-
-    margin-top: 5px;
-
-    font-size: 11px;
-}
-
-.music-line {
-    height: 3px;
-
-    background: #d7c3cf;
-
-    margin: 25px 0;
-}
-
-.music-controls {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 20px;
-}
-
-.music-controls button {
-    border: 1px solid #9b8492;
-
-    background: #f4e8ef;
-
-    width: 35px;
-    height: 30px;
-
-    cursor: pointer;
-}
 
 
 /* ==========================

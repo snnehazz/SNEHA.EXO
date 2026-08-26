@@ -93,16 +93,6 @@
 
             </button>
 
-
-            <button class="desktop-icon"
-                onclick="openWindow('music-window')">
-
-                <span class="icon">♫</span>
-                <span>Music</span>
-
-            </button>
-
-
             <button class="desktop-icon"
                 onclick="openWindow('random-window')">
 
@@ -508,65 +498,7 @@
         </section>
 
 
-        <!-- ==========================
-             MUSIC
-        =========================== -->
-
-        <section class="window"
-            id="music-window"
-            style="top: 29%; left: 48%;">
-
-            <div class="window-header">
-
-                <span>♫ MUSIC PLAYER</span>
-
-                <div class="window-buttons">
-
-                    <button onclick="minimizeWindow('music-window')">−</button>
-                    <button onclick="maximizeWindow('music-window')">□</button>
-                    <button onclick="closeWindow('music-window')">×</button>
-
-                </div>
-
-            </div>
-
-
-            <div class="window-content music-content">
-
-                <div class="album-art">
-                    ♫
-                </div>
-
-                <p class="now-playing">
-                    NOW PLAYING
-                </p>
-
-                <h2>
-                    your favorite song
-                </h2>
-
-                <p class="artist">
-                    artist name
-                </p>
-
-                <div class="music-line"></div>
-
-                <div class="music-controls">
-
-                    <button>◀</button>
-
-                    <button id="play-button">
-                        ▶
-                    </button>
-
-                    <button>▶</button>
-
-                </div>
-
-            </div>
-
-        </section>
-
+       
 
         <!-- ==========================
              RANDOM
@@ -740,6 +672,10 @@
 
             <button onclick="openWindow('random-window')">
                 ✦ Random
+            </button>
+            
+            <button onclick="openWindow('guestbook-window')">
+                ✉ Guestbook
             </button>
 
         </div>
