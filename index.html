@@ -1,34 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Basic SEO -->
-<meta name="description" content="A personal website designed to look like a retro Windows desktop, showcasing my interests, photos, and projects.">
-<meta name="keywords" content="Sneha, personal website, retro Windows desktop, interests, photos, projects">
-<meta name="author" content="Sneha">
 
-<!-- Browser / Mobile -->
-<meta name="theme-color" content="#8b7bb8">
-<meta name="color-scheme" content="dark">
+    <!-- ==========================
+         SEO
+    =========================== -->
 
-<!-- Open Graph — Discord, Facebook, Messenger, etc. -->
-<meta property="og:title" content="SNEHA.EXE">
-<meta property="og:description" content="A little corner of the internet by Sneha.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/logo.png">
-<meta property="og:site_name" content="SNEHA.EXE">
+    <title>SNEHA.EXE — Sneha's Personal Website</title>
 
+    <meta name="description"
+        content="Welcome to SNEHA.EXE — Sneha's personal retro Windows-style website featuring her photos, interests, games, projects, and little corner of the internet.">
 
+    <meta name="author" content="Sneha">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="images/logo.png">
-    
-    <title>SNEHA.EXE</title>
+    <link rel="canonical" href="https://snehathapamagar.com.np/">
+
+    <!-- ==========================
+         Browser / Mobile
+    =========================== -->
+
+    <meta name="theme-color" content="#8b7bb8">
+    <meta name="color-scheme" content="dark">
+
+    <!-- ==========================
+         Open Graph
+    =========================== -->
+
+    <meta property="og:title" content="SNEHA.EXE — Sneha's Personal Website">
+    <meta property="og:description"
+        content="A little corner of the internet by Sneha, featuring photos, interests, games, projects, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snehathapamagar.com.np/">
+    <meta property="og:image" content="https://snehathapamagar.com.np/images/logo.png">
+    <meta property="og:site_name" content="SNEHA.EXE">
+
+    <!-- ==========================
+         Favicon
+    =========================== -->
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -64,70 +81,52 @@
 
     <main id="desktop">
 
-
-        <!-- DESKTOP ICONS -->
+        <!-- ==========================
+             DESKTOP ICONS
+        =========================== -->
 
         <div class="desktop-icons">
 
             <button class="desktop-icon"
                 onclick="openWindow('about-window')">
-
                 <span class="icon">☻</span>
                 <span>About Me</span>
-
             </button>
-
 
             <button class="desktop-icon"
                 onclick="openWindow('things-window')">
-
                 <span class="icon">📁</span>
                 <span>Things I Like</span>
-
             </button>
-
 
             <button class="desktop-icon"
                 onclick="openWindow('photos-window')">
-
                 <span class="icon">📷</span>
                 <span>My Photos</span>
-
             </button>
-
 
             <button class="desktop-icon"
                 onclick="openWindow('games-window')">
-
                 <span class="icon">🎮</span>
                 <span>Games</span>
-
             </button>
-
 
             <button class="desktop-icon"
                 onclick="openWindow('projects-window')">
-
                 <span class="icon">▣</span>
                 <span>Projects</span>
-
             </button>
 
             <button class="desktop-icon"
                 onclick="openWindow('random-window')">
-
                 <span class="icon">✦</span>
                 <span>Random.txt</span>
-
             </button>
-
 
             <button class="desktop-icon"
                 onclick="openWindow('guestbook-window')">
-
                 <span class="icon">✉</span>
                 <span>Guestbook</span>
-
             </button>
 
         </div>
@@ -155,13 +154,11 @@
 
             </div>
 
-
             <div class="window-content about-content">
 
                 <div class="profile-picture">
                     <span>♡</span>
                 </div>
-
 
                 <div>
 
@@ -173,11 +170,9 @@
                     </p>
 
                     <p>
-                       i like playing with AI.<br>
-
-                      click around.
+                        i like playing with AI.<br>
+                        click around.
                     </p>
-
 
                     <div class="profile-info">
 
@@ -227,13 +222,11 @@
 
             </div>
 
-
             <div class="window-content">
 
                 <p class="folder-path">
                     C:\Users\Sneha\Favorites
                 </p>
-
 
                 <div class="folder-grid">
 
@@ -248,7 +241,7 @@
                     </div>
 
                     <div class="folder">
-                       <span>ʚɞ</span>
+                        <span>ʚɞ</span>
                         <p>Paws</p>
                     </div>
 
@@ -296,13 +289,11 @@
 
             </div>
 
-
             <div class="window-content">
 
                 <p class="folder-path">
                     C:\Users\Sneha\Pictures
                 </p>
-
 
                 <div class="photo-grid">
 
@@ -310,47 +301,43 @@
                         onclick="openPhoto('images/photo1.jpg','photo1.jpg')">
 
                         <img src="images/photo1.jpg"
-                            alt="Photo 1">
+                            alt="Sneha personal photo 1">
 
                         <small>photo1.jpg</small>
 
                     </div>
 
-
                     <div class="photo"
                         onclick="openPhoto('images/photo2.jpg','photo2.jpg')">
 
                         <img src="images/photo2.jpg"
-                            alt="Photo 2">
+                            alt="Sneha personal photo 2">
 
                         <small>photo2.jpg</small>
 
                     </div>
 
-
                     <div class="photo"
                         onclick="openPhoto('images/photo3.jpg','photo3.jpg')">
 
                         <img src="images/photo3.jpg"
-                            alt="Photo 3">
+                            alt="Sneha personal photo 3">
 
                         <small>photo3.jpg</small>
 
                     </div>
 
-
                     <div class="photo"
                         onclick="openPhoto('images/photo4.jpg','photo4.jpg')">
 
                         <img src="images/photo4.jpg"
-                            alt="Photo 4">
+                            alt="Sneha personal photo 4">
 
                         <small>photo4.jpg</small>
 
                     </div>
 
                 </div>
-
 
                 <p class="photo-note">
                     click a photo to open it ✦
@@ -362,7 +349,7 @@
 
 
         <!-- ==========================
-             GAMES / MLBB
+             GAMES
         =========================== -->
 
         <section class="window"
@@ -383,15 +370,16 @@
 
             </div>
 
-
             <div class="window-content">
 
                 <div class="game-card">
 
                     <div class="game-icon">
-    <img src="images/mlbb.jpg" alt="Mobile Legends">
-</div>
 
+                        <img src="images/mlbb.jpg"
+                            alt="Mobile Legends Bang Bang">
+
+                    </div>
 
                     <div>
 
@@ -404,7 +392,6 @@
                             Bang Bang
                         </h2>
 
-
                         <div class="lanes">
 
                             <span>MID</span>
@@ -412,7 +399,6 @@
                             <span>ROAM</span>
 
                         </div>
-
 
                         <p class="game-status">
                             currently playing ♡
@@ -449,13 +435,11 @@
 
             </div>
 
-
             <div class="window-content">
 
                 <p class="folder-path">
                     C:\Users\Sneha\Projects
                 </p>
-
 
                 <div class="project-file">
 
@@ -472,7 +456,6 @@
 
                 </div>
 
-
                 <div class="project-file">
 
                     <span>▣</span>
@@ -487,7 +470,6 @@
                     <b>JS</b>
 
                 </div>
-
 
                 <div class="project-file">
 
@@ -508,8 +490,6 @@
 
         </section>
 
-
-       
 
         <!-- ==========================
              RANDOM
@@ -533,7 +513,6 @@
 
             </div>
 
-
             <div class="window-content random-content">
 
                 <p>
@@ -550,7 +529,6 @@
                     <li>☻ unnecessary screenshots</li>
 
                 </ul>
-
 
                 <p class="blink-text">
                     more randomness pending...
@@ -583,24 +561,20 @@
 
             </div>
 
-
             <div class="window-content guestbook">
 
                 <h2>
                     leave a message ♡
                 </h2>
 
-
                 <input
                     type="text"
                     id="guest-name"
                     placeholder="your name">
 
-
                 <textarea
                     id="guest-message"
                     placeholder="say something..."></textarea>
-
 
                 <button
                     class="send-button"
@@ -609,7 +583,6 @@
                     SIGN GUESTBOOK
 
                 </button>
-
 
                 <p id="guest-response"></p>
 
@@ -632,11 +605,9 @@
 
             </button>
 
-
             <div class="taskbar-title">
                 SNEHA.EXE
             </div>
-
 
             <div
                 class="clock"
@@ -649,7 +620,9 @@
         </footer>
 
 
-        <!-- START MENU -->
+        <!-- ==========================
+             START MENU
+        =========================== -->
 
         <div id="start-menu">
 
@@ -684,7 +657,7 @@
             <button onclick="openWindow('random-window')">
                 ✦ Random
             </button>
-            
+
             <button onclick="openWindow('guestbook-window')">
                 ✉ Guestbook
             </button>
@@ -692,7 +665,9 @@
         </div>
 
 
-        <!-- PHOTO VIEWER -->
+        <!-- ==========================
+             PHOTO VIEWER
+        =========================== -->
 
         <div id="photo-viewer">
 
@@ -706,12 +681,10 @@
 
                 </button>
 
-
                 <img
                     id="viewer-image"
                     src=""
                     alt="Selected photo">
-
 
                 <p id="viewer-name">
                     photo.jpg
@@ -722,27 +695,43 @@
         </div>
 
     </main>
-<div id="message-popup" class="message-popup">
-    <div class="popup-sparkles">✦ ˚｡⋆</div>
-    
-    <div class="popup-icon">💌</div>
 
-    <div class="popup-title">
-        message delivered!
+
+    <!-- ==========================
+         MESSAGE POPUP
+    =========================== -->
+
+    <div id="message-popup" class="message-popup">
+
+        <div class="popup-sparkles">
+            ✦ ˚｡⋆
+        </div>
+
+        <div class="popup-icon">
+            💌
+        </div>
+
+        <div class="popup-title">
+            message delivered!
+        </div>
+
+        <div class="popup-text">
+            your little message has flown away ♡
+        </div>
+
+        <button onclick="closeMessagePopup()">
+            okay ♡
+        </button>
+
     </div>
 
-    <div class="popup-text">
-        your little message has flown away ♡
-    </div>
 
-    <button onclick="closeMessagePopup()">
-        okay ♡
-    </button>
-</div>
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
-
