@@ -1,3 +1,28 @@
+/* =================================
+   UI SOUNDS
+================================= */
+
+const clickSound = new Audio("sounds/click.mp3");
+const openSound = new Audio("sounds/open.mp3");
+const closeSound = new Audio("sounds/close.mp3");
+const sendSound = new Audio("sounds/send.mp3");
+const sentSound = new Audio("sounds/sent.mp3");
+
+clickSound.volume = 0.3;
+openSound.volume = 0.35;
+closeSound.volume = 0.3;
+sendSound.volume = 0.4;
+sentSound.volume = 0.45;
+
+
+function playSound(sound) {
+
+    sound.currentTime = 0;
+
+    sound.play().catch(() => {});
+
+}
+
 
 /* =================================
    BOOT SCREEN
@@ -17,6 +42,7 @@ const desktop =
 
 
 let progress = 0;
+playSound(openSound);
 
 const bootMessages = [
 
@@ -31,24 +57,32 @@ const bootMessages = [
 
 const bootInterval = setInterval(() => {
 
-    progress += Math.floor(Math.random() * 8) + 4;
+    progress +=
+        Math.floor(Math.random() * 8) + 4;
+
 
     if (progress >= 100) {
 
         progress = 100;
 
+        
+
         bootProgress.style.width =
             "100%";
+
 
         bootStatus.textContent =
             "Ready.";
 
+
         clearInterval(bootInterval);
+
 
         setTimeout(() => {
 
             bootScreen.style.display =
                 "none";
+
 
             desktop.classList.add(
                 "visible"
@@ -56,10 +90,12 @@ const bootInterval = setInterval(() => {
 
         }, 500);
 
+
     } else {
 
         bootProgress.style.width =
             progress + "%";
+
 
         const messageIndex =
             Math.min(
@@ -69,10 +105,12 @@ const bootInterval = setInterval(() => {
                 bootMessages.length - 1
             );
 
+
         bootStatus.textContent =
             bootMessages[messageIndex];
 
     }
+
 
 }, 120);
 
@@ -89,17 +127,26 @@ function openWindow(id) {
     const windowElement =
         document.getElementById(id);
 
+
     if (!windowElement) return;
+
 
     windowElement.style.display =
         "block";
 
+
     windowElement.style.zIndex =
         ++highestZ;
+
 
     windowElement.classList.remove(
         "minimized"
     );
+
+
+    /* WINDOW OPEN = NORMAL CLICK */
+    playSound(clickSound);
+
 
     closeStartMenu();
 
@@ -111,10 +158,16 @@ function closeWindow(id) {
     const windowElement =
         document.getElementById(id);
 
+
     if (!windowElement) return;
+
 
     windowElement.style.display =
         "none";
+
+
+    /* WINDOW CLOSE */
+    playSound(closeSound);
 
 }
 
@@ -124,7 +177,9 @@ function minimizeWindow(id) {
     const windowElement =
         document.getElementById(id);
 
+
     if (!windowElement) return;
+
 
     windowElement.style.display =
         "none";
@@ -137,11 +192,14 @@ function maximizeWindow(id) {
     const windowElement =
         document.getElementById(id);
 
+
     if (!windowElement) return;
+
 
     windowElement.classList.toggle(
         "maximized"
     );
+
 
     if (
         windowElement.classList.contains(
@@ -152,28 +210,36 @@ function maximizeWindow(id) {
         windowElement.dataset.oldTop =
             windowElement.style.top;
 
+
         windowElement.dataset.oldLeft =
             windowElement.style.left;
+
 
         windowElement.dataset.oldWidth =
             windowElement.style.width;
 
+
         windowElement.style.top =
             "60px";
+
 
         windowElement.style.left =
             "5%";
 
+
         windowElement.style.width =
             "90%";
+
 
     } else {
 
         windowElement.style.top =
             windowElement.dataset.oldTop;
 
+
         windowElement.style.left =
             windowElement.dataset.oldLeft;
+
 
         windowElement.style.width =
             windowElement.dataset.oldWidth;
@@ -183,7 +249,9 @@ function maximizeWindow(id) {
 }
 
 
-/* Bring window forward */
+/* =================================
+   BRING WINDOW FORWARD
+================================= */
 
 document.querySelectorAll(
     ".window"
@@ -215,10 +283,14 @@ document.querySelectorAll(
             ".window-header"
         );
 
+
     let dragging = false;
 
     let offsetX = 0;
     let offsetY = 0;
+
+
+    if (!header) return;
 
 
     header.addEventListener(
@@ -229,16 +301,24 @@ document.querySelectorAll(
                 window.innerWidth <= 700
             ) return;
 
+
             dragging = true;
 
+
             const rect =
-                windowElement.getBoundingClientRect();
+                windowElement
+                    .getBoundingClientRect();
+
 
             offsetX =
-                event.clientX - rect.left;
+                event.clientX -
+                rect.left;
+
 
             offsetY =
-                event.clientY - rect.top;
+                event.clientY -
+                rect.top;
+
 
             windowElement.style.zIndex =
                 ++highestZ;
@@ -253,11 +333,17 @@ document.querySelectorAll(
 
             if (!dragging) return;
 
+
             windowElement.style.left =
-                event.clientX - offsetX + "px";
+                event.clientX -
+                offsetX +
+                "px";
+
 
             windowElement.style.top =
-                event.clientY - offsetY + "px";
+                event.clientY -
+                offsetY +
+                "px";
 
         }
     );
@@ -314,14 +400,18 @@ function updateClock() {
             "clock"
         );
 
+
     const now =
         new Date();
+
 
     let hours =
         now.getHours();
 
+
     let minutes =
         now.getMinutes();
+
 
     hours =
         String(hours).padStart(
@@ -329,18 +419,22 @@ function updateClock() {
             "0"
         );
 
+
     minutes =
         String(minutes).padStart(
             2,
             "0"
         );
 
+
     clock.textContent =
         hours + ":" + minutes;
 
 }
 
+
 updateClock();
+
 
 setInterval(
     updateClock,
@@ -362,21 +456,26 @@ function openPhoto(
             "photo-viewer"
         );
 
+
     const image =
         document.getElementById(
             "viewer-image"
         );
+
 
     const name =
         document.getElementById(
             "viewer-name"
         );
 
+
     image.src =
         imagePath;
 
+
     name.textContent =
         imageName;
+
 
     viewer.classList.add(
         "open"
@@ -392,11 +491,13 @@ function closePhotoViewer() {
             "photo-viewer"
         );
 
+
     viewer.classList.remove(
         "open"
     );
 
 }
+
 
 /* =================================
    GUESTBOOK
@@ -404,18 +505,27 @@ function closePhotoViewer() {
 
 async function sendMessage() {
 
-    const name = document
-        .getElementById("guest-name")
-        .value
-        .trim();
+    /* SEND BUTTON SOUND */
+    playSound(sendSound);
 
-    const message = document
-        .getElementById("guest-message")
-        .value
-        .trim();
 
-    const response = document
-        .getElementById("guest-response");
+    const name =
+        document
+            .getElementById("guest-name")
+            .value
+            .trim();
+
+
+    const message =
+        document
+            .getElementById("guest-message")
+            .value
+            .trim();
+
+
+    const response =
+        document
+            .getElementById("guest-response");
 
 
     if (!name || !message) {
@@ -424,6 +534,7 @@ async function sendMessage() {
             "please fill in both fields ♡";
 
         return;
+
     }
 
 
@@ -434,22 +545,33 @@ async function sendMessage() {
     try {
 
         await fetch(
+
             "https://script.google.com/macros/s/AKfycbyoztx_wKzO-q58e3CGAi46ZtQGFdjxGbo8fzTqucSQqJX3A3adhkNsS4Z5ycWlEh65/exec",
+
             {
+
                 method: "POST",
 
                 mode: "no-cors",
 
                 headers: {
+
                     "Content-Type":
                         "text/plain;charset=utf-8"
+
                 },
 
-                body: JSON.stringify({
-                    name: name,
-                    message: message
-                })
+                body:
+                    JSON.stringify({
+
+                        name: name,
+
+                        message: message
+
+                    })
+
             }
+
         );
 
 
@@ -457,19 +579,32 @@ async function sendMessage() {
             "message sent successfully ♡";
 
 
-        document.getElementById(
-            "guest-name"
-        ).value = "";
+        /* SUCCESSFUL MESSAGE SOUND */
+        playSound(sentSound);
 
 
-        document.getElementById(
-            "guest-message"
-        ).value = "";
+        /* SHOW POPUP */
+        showMessagePopup();
+
+
+        document
+            .getElementById(
+                "guest-name"
+            )
+            .value = "";
+
+
+        document
+            .getElementById(
+                "guest-message"
+            )
+            .value = "";
 
 
     } catch (error) {
 
         console.error(error);
+
 
         response.textContent =
             "something went wrong :(";
@@ -478,24 +613,73 @@ async function sendMessage() {
 
 }
 
+
+/* =================================
+   GUESTBOOK SUCCESS POPUP
+================================= */
+
+function showMessagePopup() {
+
+    const popup =
+        document.getElementById(
+            "message-popup"
+        );
+
+
+    if (!popup) return;
+
+
+    popup.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeMessagePopup() {
+
+    const popup =
+        document.getElementById(
+            "message-popup"
+        );
+
+
+    if (!popup) return;
+
+
+    popup.classList.remove(
+        "show"
+    );
+
+}
+
+
 /* =================================
    CLOSE PHOTO VIEWER
    WHEN CLICKING OUTSIDE
 ================================= */
 
-document.getElementById(
-    "photo-viewer"
-).addEventListener(
-    "click",
-    function(event) {
+const photoViewer =
+    document.getElementById(
+        "photo-viewer"
+    );
 
-        if (
-            event.target === this
-        ) {
 
-            closePhotoViewer();
+if (photoViewer) {
+
+    photoViewer.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closePhotoViewer();
+
+            }
 
         }
+    );
 
-    }
-);
+}

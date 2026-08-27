@@ -741,6 +741,139 @@ body {
 
     color: #8b7081;
 }
+/* =================================
+   GUESTBOOK SUCCESS POPUP
+================================= */
+
+.message-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -45%) scale(0.8);
+
+    width: 280px;
+    padding: 25px;
+
+    background: #fff8fc;
+    border: 2px solid #d9a8c4;
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(80, 40, 70, 0.25);
+
+    text-align: center;
+
+    z-index: 9999;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.message-popup.show {
+
+    opacity: 1;
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+}
+
+
+.popup-sparkles {
+
+    font-size: 18px;
+    margin-bottom: 5px;
+
+    animation:
+        sparkleFloat 1.5s ease-in-out infinite;
+
+}
+
+
+.popup-icon {
+
+    font-size: 42px;
+    margin-bottom: 8px;
+
+}
+
+
+.popup-title {
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #8d5475;
+
+    margin-bottom: 8px;
+
+}
+
+
+.popup-text {
+
+    font-size: 13px;
+
+    color: #856b79;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+
+}
+
+
+.message-popup button {
+
+    border: 1px solid #c98eae;
+
+    background: #f5d7e6;
+
+    color: #71445d;
+
+    padding: 7px 18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+
+}
+
+
+.message-popup button:hover {
+
+    background: #ecc3d8;
+
+    transform: scale(1.05);
+
+}
+
+
+@keyframes sparkleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+}
 
 
 /* ==========================
