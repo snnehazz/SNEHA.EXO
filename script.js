@@ -3,13 +3,13 @@
 ================================= */
 
 const clickSound = new Audio("sounds/click.mp3");
-const openSound = new Audio("sounds/open.mp3");
+
 const closeSound = new Audio("sounds/close.mp3");
 const sendSound = new Audio("sounds/send.mp3");
 const sentSound = new Audio("sounds/sent.mp3");
 
 clickSound.volume = 0.3;
-openSound.volume = 0.35;
+
 closeSound.volume = 0.3;
 sendSound.volume = 0.4;
 sentSound.volume = 0.45;
@@ -42,7 +42,7 @@ const desktop =
 
 
 let progress = 0;
-playSound(openSound);
+
 
 const bootMessages = [
 
